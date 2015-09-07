@@ -23,7 +23,7 @@ fst' (a,b) = a
 
 --pembatas
 
-snd' x = x
+snd' (c,d) = d
 
 --pembatas
 
