@@ -7,15 +7,19 @@ import Data.List
 
 -- 1.a
 
-null' x = x
+null' x
+  | x == [] = True
+  | otherwise = False
 
 --pembatas
 
-take' x = x
+take' 0 (xs) = []
+take' n (x:xs) = x : take' (n-1) (xs)
 
 --pembatas
 
-drop' x = x
+drop' 0 (xs) = (xs)
+drop' n (x:xs) = drop' (n-1) (xs) 
 
 --pembatas
 
@@ -79,7 +83,7 @@ notElem' x = x
 
 --pembatas
 
-head' x = x
+head' (x:xs) = x 
 
 --pembatas
 
@@ -95,7 +99,7 @@ last' x = x
 
 --pembatas
 
-tail' x = x
+tail' (x:xs) = xs
 
 --pembatas
 
@@ -103,11 +107,15 @@ init' x = x
 
 --pembatas
 
-max' x = x
+max' a b 
+  | a>b = a
+  | otherwise = b
 
 --pembatas
 
-min' x = x
+min' a b
+  | a<b = a
+  | otherwise = b
 
 --pembatas
 
@@ -123,7 +131,10 @@ intercalate' x = x
 
 --pembatas
 
-and' x = x
+and' x
+  | x == True = True
+  | otherwise = False
+
 
 --pembatas
 
