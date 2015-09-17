@@ -155,19 +155,19 @@ product' x = x
 
 --pembatas
 
-words' x = x
+words' c = c : []
 
 --pembatas
 
-lines' x = x
+lines' d = d : []
 
 --pembatas
 
-unlines' x = x
+unlines' [a] = a ++ []
 
 --pembatas
 
-unwords' x = x
+unwords' [f] = f ++ []
 
 --pembatas
 
