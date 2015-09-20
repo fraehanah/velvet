@@ -124,7 +124,7 @@ min' a b
 
 --pembatas
 
-concat' x = x
+concat' [(x:xs)] = (x:xs)
 
 --pembatas
 
