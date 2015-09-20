@@ -97,7 +97,9 @@ reverse' (x:xs) = reverse'(xs) ++ x : []
 
 --pembatas
 
-last' x = x
+last' [] = 0
+last' [x] = x
+last' (x:xs) = last' xs
 
 --pembatas
 
@@ -105,7 +107,8 @@ tail' (x:xs) = xs
 
 --pembatas
 
-init' x = x
+init' [x] = []
+init' (x:xs) = [x] ++ init' (xs)
 
 --pembatas
 
