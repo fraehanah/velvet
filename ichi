@@ -139,8 +139,8 @@ intercalate' x = x
 
 --pembatas
 
-adn [] = True
-adn (x:xs)
+and' [] = True
+and' (x:xs)
   | x /= True = False
   | otherwise = adn (xs)
 
