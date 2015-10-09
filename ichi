@@ -143,8 +143,11 @@ adn (x:xs)
 
 --pembatas
 
-or' x = x
-
+or' [] = False
+or' (x:xs)
+  | x/= False = True
+  | otherwise = or' (xs)
+  
 --pembatas
 
 zip3' x = x
