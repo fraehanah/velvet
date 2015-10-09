@@ -125,7 +125,9 @@ min' a b
 
 --pembatas
 
+concat' [[]] = []
 concat' [(x:xs)] = (x:xs)
+
 
 --pembatas
 
