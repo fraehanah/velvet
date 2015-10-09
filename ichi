@@ -136,10 +136,10 @@ intercalate' x = x
 
 --pembatas
 
-and' x
-  | x == True = True
-  | otherwise = False
-
+adn [] = True
+adn (x:xs)
+  | x /= True = False
+  | otherwise = adn (xs)
 
 --pembatas
 
