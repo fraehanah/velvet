@@ -13,22 +13,23 @@ null' x
 
 --pembatas
 
-take' 0 (xs) = []
-take' n (x:xs) = x : take' (n-1) (xs)
+take' y (x:xs)
+  | y == 0 = []
+  | otherwise = x : take' (y-1) (xs)
+  
+--pembatas
+
+drop' y (x:xs)
+  | y == 0 = (x:xs)
+  | otherwise = drop (y-1) (xs)
 
 --pembatas
 
-drop' _ [] = []
-drop' 0 (xs) = (xs)
-drop' n (x:xs) = drop' (n-1) (xs) 
+fst' (c,w) = c
 
 --pembatas
 
-fst' (a,b) = a
-
---pembatas
-
-snd' (c,d) = d
+snd' (c,w) = w
 
 --pembatas
 
@@ -64,7 +65,9 @@ zipWith' x = x
 
 --pembatas
 
-nth' x = x
+nth' (x:xs) y
+  | y == 0 = x
+  | otherwise = nth' (xs) (y-1)
 
 --pembatas
 
@@ -84,23 +87,22 @@ notElem' x = x
 
 --pembatas
 
-head' (x:xs) = x 
+head' (x:xs) = x
 
 --pembatas
 
 length' [] = 0
-length' (x:xs) = 1 + (length' (xs))
+length' (x:xs) = 1 + length' (xs)
 
 --pembatas
 
 reverse' [] = []
-reverse' (x:xs) = reverse'(xs) ++ x : []
+reverse' (x:xs) = reverse' (xs) ++ x : []
 
 --pembatas
 
-last' [] = 0
 last' [x] = x
-last' (x:xs) = last' xs
+last' (x:xs) = last' (xs)
 
 --pembatas
 
@@ -109,19 +111,19 @@ tail' (x:xs) = xs
 --pembatas
 
 init' [x] = []
-init' (x:xs) = [x] ++ init' (xs)
+init' (x:xs) = x : init' (xs)
 
 --pembatas
 
-max' a b 
-  | a>b = a
-  | otherwise = b
+max' c w
+  | c > w = c
+  | otherwise = w
 
 --pembatas
 
-min' a b
-  | a<b = a
-  | otherwise = b
+min' c w
+  | w > c = c
+  | otherwise = w
 
 --pembatas
 
